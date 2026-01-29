@@ -10,8 +10,10 @@
 
 **新一代GPU加速计算流体动力学软件**
 
-[![GitHub](https://img.shields.io/badge/GitHub-Tes--bo-blue?logo=github)](https://github.com/Tes-bo)
-[![Email](https://img.shields.io/badge/Email-cotsqa%40qq.com-red?logo=gmail)](mailto:cotsqa@qq.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Tes--bo-d648ff?logo=github)](https://github.com/Tes-bo)
+[![Email](https://img.shields.io/badge/Email-cotsqa%40qq.com-fccf9a?logo=gmail)](mailto:cotsqa@qq.com)
+[![Website](https://img.shields.io/badge/Website-tesbocfd.com-c05c84?logo=google-chrome&logoColor=white)](https://www.tesbocfd.com/)
+[![CUDA](https://img.shields.io/badge/CUDA-Supported-76b900?logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-toolkit)
 
 </div>
 
@@ -35,10 +37,10 @@
 - ⚡ **Features**: Complete GPU computation for incompressible CFD simulations
 - 🚀 **Performance**: 1000x faster than traditional CPU-based solvers
 
-### 🔧 **January 2026** - Dynamic Mesh (In Progress)
-- 🛠️ **Current Development**: Dynamic mesh functionality
-- 📊 **Status**: Active development phase
-- 🎯 **Goal**: Enable moving mesh simulations on GPU
+### ✅ **January 2026** - Dynamic Mesh Support
+- 🎉 **Completed**: Full GPU-accelerated dynamic mesh functionality
+- ⚡ **Features**: Moving mesh simulations fully running on GPU
+- 🚀 **Capabilities**: Support for mesh motion, deformation, and topology changes
 
 ### 🔮 **Coming Soon**
 - Compressible flow solver
@@ -47,7 +49,6 @@
 - Overset mesh
 
 ---
-
 
 ## 💡 About TesboCFD | 关于TesboCFD
 
