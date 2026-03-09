@@ -42,11 +42,15 @@
 - ⚡ **Features**: Moving mesh simulations fully running on GPU
 - 🚀 **Capabilities**: Support for mesh motion, deformation, and topology changes
 
+### ✅ **March 2026** - Overset Mesh Support
+- 🎉 **Completed**: Full GPU-accelerated overset (chimera) mesh functionality
+- ⚡ **Features**: Overlapping grid simulations fully running on GPU
+- 🚀 **Capabilities**: Support for overset interpolation, hole cutting, and multi-body simulations
+
 ### 🔮 **Coming Soon**
 - Compressible flow solver
 - Multi-phase flow support
 - Advanced turbulence models
-- Overset mesh
 
 ---
 
