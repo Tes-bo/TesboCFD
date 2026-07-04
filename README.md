@@ -1,124 +1,152 @@
 <div align="center">
 
-<img src="pics/tesboflow.svg" alt="TesboFlow Logo" width="400"/>
+<img src="pics/tesbocfd.svg" alt="TesboCFD Logo" width="480"/>
 
-# TesboFlow : Fully GPU-Accelerated CFD Solver
+# TesboCFD
 
-### 🌐 [Official Website | 官方网站](https://www.tesbocfd.com/)
+### Built for speed. Powered by GPU.
 
-**Next-Generation GPU-Powered Computational Fluid Dynamics Software by TesboCFD Team**
+**GPU-native computational fluid dynamics — making high-fidelity simulation go from days to minutes.**
 
-**TesboCFD团队出品 · 新一代GPU加速计算流体动力学软件**
-
+[![Website](https://img.shields.io/badge/Website-tesbocfd.com-c05c84?logo=google-chrome&logoColor=white)](https://www.tesbocfd.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-Tes--bo-d648ff?logo=github)](https://github.com/Tes-bo)
 [![Email](https://img.shields.io/badge/Email-cotsqa%40qq.com-fccf9a?logo=gmail)](mailto:cotsqa@qq.com)
-[![Website](https://img.shields.io/badge/Website-tesbocfd.com-c05c84?logo=google-chrome&logoColor=white)](https://www.tesbocfd.com/)
-[![CUDA](https://img.shields.io/badge/CUDA-Supported-76b900?logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-toolkit)
+[![CUDA](https://img.shields.io/badge/CUDA-Powered-76b900?logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-toolkit)
 
 </div>
 
 ---
 
-## 📢 Important Update | 重要更新
+## Who we are
 
-> **TesboFlow, the fully GPU-accelerated CFD solver developed by the TesboCFD team, is currently under closed-source development.**
+**TesboCFD** is a team focused on **GPU-native computational fluid dynamics (CFD)**.
+We build modern simulation software that runs the entire pipeline on the GPU —
+delivering large speedups over traditional CPU clusters, so engineers spend less
+time waiting and more time designing.
+
+> **Star this repo and follow [TesboCFD on GitHub](https://github.com/Tes-bo)** to track our progress.
 >
-> 🌟 **Please star this repository and follow [TesboCFD's GitHub](https://github.com/Tes-bo) to stay updated on the latest development progress!**
->
-> 💼 **Interested in collaboration?** Companies or individuals who wish to collaborate are welcome to contact us.
+> **Open to collaboration and investment** — technical partnerships, business partnerships, and investment conversations are all welcome.
 
 ---
 
-## 📅 Development Timeline | 开发时间线
+## Products
 
-### ✅ **2025** - Incompressible Flow Support
-- 🎉 **Completed**: Full GPU-accelerated incompressible flow solver
-- ⚡ **Features**: Complete GPU computation for incompressible CFD simulations
-- 🚀 **Performance**: 1000x faster than traditional CPU-based solvers
-
-### ✅ **January 2026** - Dynamic Mesh Support
-- 🎉 **Completed**: Full GPU-accelerated dynamic mesh functionality
-- ⚡ **Features**: Moving mesh simulations fully running on GPU
-- 🚀 **Capabilities**: Support for mesh motion, deformation, and topology changes
-
-### ✅ **March 2026** - Overset Mesh Support
-- 🎉 **Completed**: Full GPU-accelerated overset (chimera) mesh functionality
-- ⚡ **Features**: Overlapping grid simulations fully running on GPU
-- 🚀 **Capabilities**: Support for overset interpolation, hole cutting, and multi-body simulations
-
-### 🔮 **Coming Soon**
-- Compressible flow solver
-- Multi-phase flow support
-- Advanced turbulence models
-
----
-
-## 💡 About TesboFlow | 关于TesboFlow
-
-TesboFlow is a revolutionary computational fluid dynamics (CFD) software developed by the **TesboCFD** team. It leverages the full power of modern GPUs to deliver unprecedented simulation speed and efficiency. By utilizing GPU acceleration, TesboFlow achieves up to **1000x performance improvement** compared to traditional CPU-based CFD solvers.
-
-TesboFlow是由**TesboCFD**团队开发的一款革命性的计算流体动力学(CFD)软件，充分利用现代GPU的强大计算能力，提供前所未有的仿真速度和效率。通过GPU加速，TesboFlow相比传统CPU求解器实现了高达**1000倍的性能提升**。
-
-### ⚡ Key Features | 核心特性
-
-- 🚀 **Full GPU Acceleration** - Complete CFD computation on GPU | 全GPU加速计算
-- ⚡ **1000x Speed Boost** - Dramatically reduced simulation time | 仿真时间大幅缩短
-- 🎯 **High Precision** - Accurate numerical results | 高精度数值结果
-- 💰 **Cost-Effective** - Lower computational costs | 更低的计算成本
-- 📈 **Scalable** - From desktop GPUs to HPC clusters | 从桌面GPU到HPC集群
-
----
-
-## 👥 About TesboCFD Team | 关于TesboCFD团队
+| Product | What it is | Status |
+|---|---|---|
+| **TesboFlow** | Fully GPU-native general-purpose CFD solver | Available, actively developed |
+| **TesboLBM** | In-house casting-simulation solver (mold filling + solidification) | Available |
+| **TesboAI** | AI + CFD product line (ML surrogates, differentiable physics, agentic CFD) | Prototypes ready, productizing |
 
 <br/>
 
 <div align="center">
-<img src="pics/tesbocfd.svg" alt="TesboCFD Team Logo" width="500"/>
+<img src="pics/tesboflow.svg" alt="TesboFlow Logo" width="360"/>
 </div>
 
-<br/>
+### TesboFlow — GPU-native CFD solver
 
-**TesboCFD** is the team behind TesboFlow, dedicated to pushing the boundaries of GPU-accelerated computational fluid dynamics and high-performance computing.
+Our flagship: a fully GPU-native CFD solver for general-purpose fluid simulation.
+The whole pipeline — mesh, discretization, linear algebra, post-processing — runs
+on the GPU, with no CPU bottleneck.
 
-**TesboCFD**是TesboFlow背后的研发团队，致力于推动GPU加速计算流体动力学与高性能计算的技术边界。
+- **Available today**: incompressible flow (steady & transient), RANS turbulence,
+  moving/deforming meshes, overset (chimera) grids, and import/conversion of
+  external mesh formats.
+- **In active development**: multi-GPU execution.
+- **On the roadmap**: multi-node (cluster) execution, broader platforms (e.g.
+  arm64), compressible flow, heat transfer, multi-phase flow, and advanced
+  turbulence models.
+
+> **Performance**: TesboFlow targets **100–1000×** speedups over CPU clusters on
+> typical workloads. Actual gains depend on case size and hardware, and are not a
+> guarantee — we're happy to run a benchmark on your own case.
+
+### TesboLBM — Casting simulation
+
+An in-house casting-simulation suite for industrial casting processes and
+process-defect analysis: mold filling via the Lattice Boltzmann Method (LBM,
+D3Q19 + free-surface tracking) and heat transfer / solidification via the Finite
+Volume Method (FVM, with adaptive mesh refinement), with the two stages coupled.
+Ships with a command-line mesh generator, runs on both CPU and CUDA GPU backends,
+and is proven end-to-end on real parts.
+
+### TesboAI — AI + CFD
+
+TesboCFD's AI + CFD product line, deeply integrated with TesboFlow. One goal above
+all: **AI-assisted CFD design** — greatly accelerating design iteration toward
+near-real-time, interactive exploration.
+
+- **Machine learning / deep learning surrogates**: neural operators (FNO-type),
+  reduced-order models, implicit neural representations, and data-driven
+  turbulence modeling.
+- **Physics-informed / differentiable physics**: physics-constrained learning and
+  end-to-end differentiable CFD.
+- **Agentic CFD** (early development): LLM/agent-driven natural-language CFD
+  workflows.
+
+> Several working prototypes and baselines exist today; productization is in
+> progress.
 
 ---
 
-```C++
-/*---------------------------------------------------------------------------*\
-  ████████╗███████╗███████╗██████╗  ██████╗        ██████╗███████╗██████╗ 
-  ╚══██╔══╝██╔════╝██╔════╝██╔══██╗██╔═══██╗      ██╔════╝██╔════╝██╔══██╗
-     ██║   █████╗  ███████╗██████╔╝██║   ██║█████╗██║     █████╗  ██║  ██║
-     ██║   ██╔══╝  ╚════██║██╔══██╗██║   ██║╚════╝██║     ██╔══╝  ██║  ██║
-     ██║   ███████╗███████║██████╔╝╚██████╔╝      ╚██████╗██║     ██████╔╝
-     ╚═╝   ╚══════╝╚══════╝╚═════╝  ╚═════╝        ╚═════╝╚═╝     ╚═════╝ 
-    TesboCFD Team | TesboFlow - GPU CFD & HPC
-    Author: Tesbo (aka seeeeeeeeeeer) | GitHub: https://github.com/Tes-bo
-    Email:  cotsqa@qq.com
-\*---------------------------------------------------------------------------*/
-```
+## Why GPU-native
+
+- **Built for the GPU from the ground up** — not a port of CPU code, so the
+  architecture is cleaner and the performance ceiling is higher.
+- **Whole pipeline on-device** — no CPU↔GPU data-shuffling overhead.
+- **Self-developed full stack** — solver + casting + AI, deeply integrated.
+- **Scalable** — from a desktop GPU workstation toward multi-GPU HPC.
 
 ---
 
-## 📞 Contact | 联系方式
+## What we do
+
+- **CFD software development** — advanced GPU-native solvers and high-performance
+  simulation tools.
+- **Engineering simulation** — simulation analysis and optimization for complex
+  fluid engineering problems.
+- **Technical consulting** — numerical modeling and advanced simulation support.
+- **Training** — CFD theory, numerical methods, GPU/CUDA, and modern simulation
+  courses. See [tesbocfd.com](https://www.tesbocfd.com/).
+
+---
+
+## Development highlights
+
+- **2025** — Fully GPU-native incompressible flow solver.
+- **January 2026** — Dynamic (moving/deforming) mesh on GPU.
+- **March 2026** — Overset (chimera) mesh on GPU.
+- **In progress** — Multi-GPU execution.
+- **Next** — Multi-node parallelism, compressible flow, heat transfer, multi-phase
+  flow, and advanced turbulence models.
+
+> TesboFlow is currently under **closed-source development**.
+
+---
+
+## Research collaboration
+
+We collaborate with research institutions on advanced simulation and solver
+validation, including Tsinghua University, the Institute of Mechanics (CAS), and
+the University of Shanghai for Science and Technology.
+
+---
+
+## Get in touch
+
+- **Evaluate on your own case** — we run a collaborative pilot: you provide a
+  representative case, we run it and compare against your existing results.
+- **Collaboration & investment** — we welcome technical/business partnerships and
+  investment conversations.
+- **Contact** — cotsqa@qq.com · https://www.tesbocfd.com/ · https://github.com/Tes-bo
+
+---
 
 <div align="center">
 
-**Developed and maintained by TesboCFD Team**
+**Developed and maintained by the TesboCFD Team**
 
-**由TesboCFD团队开发与维护**
-
-📮 **Email:** cotsqa@qq.com
-
-👨‍💻 **GitHub:** https://github.com/Tes-bo
-
-🌐 **Website:** https://www.tesbocfd.com/
-
----
-
-*Project Founder & Lead Developer*
-
-**Tesbo** 👨‍💻🔥
+**Built for speed. Powered by GPU.**
 
 </div>
