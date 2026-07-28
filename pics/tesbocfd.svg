@@ -3,7 +3,7 @@
     TesboCFD Perfect-Vector Logo
     Strictly reconstructed cell-by-cell on a 6x6 grid.
     Hyphen removed. Shifted C, F, D to maintain standard 1-column gap.
-    Color: #D648FF (Identical to public/tesboflow.svg)
+    Color: #D648FF (Identical to tesboflow.svg)
     Grid: 55 columns x 6 rows (block size 12px, gap 2px, pitch 14px)
   -->
   <g fill="#D648FF">
@@ -61,7 +61,7 @@
       <rect x="168" y="70" width="12" height="12"/>
     </g>
 
-    <!-- Letter S (Columns 14..19, Row 0..5, Perfect 180° Rotational Symmetry) -->
+    <!-- Letter S (Columns 14..19, Row 0..5) -->
     <g id="letter-S">
       <rect x="196" y="0" width="12" height="12"/>
       <rect x="210" y="0" width="12" height="12"/>
@@ -76,11 +76,9 @@
       <rect x="210" y="28" width="12" height="12"/>
       <rect x="224" y="28" width="12" height="12"/>
       <rect x="238" y="28" width="12" height="12"/>
-      <rect x="252" y="28" width="12" height="12"/>
       <rect x="224" y="42" width="12" height="12"/>
       <rect x="238" y="42" width="12" height="12"/>
       <rect x="252" y="42" width="12" height="12"/>
-      <rect x="266" y="42" width="12" height="12"/>
       <rect x="196" y="56" width="12" height="12"/>
       <rect x="238" y="56" width="12" height="12"/>
       <rect x="252" y="56" width="12" height="12"/>
