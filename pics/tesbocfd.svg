@@ -1,0 +1,229 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 768 84">
+  <!--
+    TesboCFD Perfect-Vector Logo
+    Strictly reconstructed cell-by-cell on a 6x6 grid.
+    Hyphen removed. Shifted C, F, D to maintain standard 1-column gap.
+    Color: #D648FF (Identical to tesboflow.svg)
+    Grid: 55 columns x 6 rows (block size 12px, gap 2px, pitch 14px)
+  -->
+  <g fill="#D648FF">
+    <!-- Letter T (Columns 0..5, Row 0..5) -->
+    <g id="letter-T">
+      <rect x="0" y="0" width="12" height="12"/>
+      <rect x="14" y="0" width="12" height="12"/>
+      <rect x="28" y="0" width="12" height="12"/>
+      <rect x="42" y="0" width="12" height="12"/>
+      <rect x="56" y="0" width="12" height="12"/>
+      <rect x="70" y="0" width="12" height="12"/>
+      <rect x="0" y="14" width="12" height="12"/>
+      <rect x="28" y="14" width="12" height="12"/>
+      <rect x="42" y="14" width="12" height="12"/>
+      <rect x="70" y="14" width="12" height="12"/>
+      <rect x="28" y="28" width="12" height="12"/>
+      <rect x="42" y="28" width="12" height="12"/>
+      <rect x="28" y="42" width="12" height="12"/>
+      <rect x="42" y="42" width="12" height="12"/>
+      <rect x="28" y="56" width="12" height="12"/>
+      <rect x="42" y="56" width="12" height="12"/>
+      <rect x="28" y="70" width="12" height="12"/>
+      <rect x="42" y="70" width="12" height="12"/>
+    </g>
+
+    <!-- Letter E (Columns 7..12, Row 0..5) -->
+    <g id="letter-E">
+      <rect x="98" y="0" width="12" height="12"/>
+      <rect x="112" y="0" width="12" height="12"/>
+      <rect x="126" y="0" width="12" height="12"/>
+      <rect x="140" y="0" width="12" height="12"/>
+      <rect x="154" y="0" width="12" height="12"/>
+      <rect x="168" y="0" width="12" height="12"/>
+      <rect x="98" y="14" width="12" height="12"/>
+      <rect x="112" y="14" width="12" height="12"/>
+      <rect x="98" y="28" width="12" height="12"/>
+      <rect x="112" y="28" width="12" height="12"/>
+      <rect x="126" y="28" width="12" height="12"/>
+      <rect x="140" y="28" width="12" height="12"/>
+      <rect x="154" y="28" width="12" height="12"/>
+      <rect x="168" y="28" width="12" height="12"/>
+      <rect x="98" y="42" width="12" height="12"/>
+      <rect x="112" y="42" width="12" height="12"/>
+      <rect x="126" y="42" width="12" height="12"/>
+      <rect x="140" y="42" width="12" height="12"/>
+      <rect x="154" y="42" width="12" height="12"/>
+      <rect x="168" y="42" width="12" height="12"/>
+      <rect x="98" y="56" width="12" height="12"/>
+      <rect x="112" y="56" width="12" height="12"/>
+      <rect x="98" y="70" width="12" height="12"/>
+      <rect x="112" y="70" width="12" height="12"/>
+      <rect x="126" y="70" width="12" height="12"/>
+      <rect x="140" y="70" width="12" height="12"/>
+      <rect x="154" y="70" width="12" height="12"/>
+      <rect x="168" y="70" width="12" height="12"/>
+    </g>
+
+    <!-- Letter S (Columns 14..19, Row 0..5) -->
+    <g id="letter-S">
+      <rect x="196" y="0" width="12" height="12"/>
+      <rect x="210" y="0" width="12" height="12"/>
+      <rect x="224" y="0" width="12" height="12"/>
+      <rect x="238" y="0" width="12" height="12"/>
+      <rect x="252" y="0" width="12" height="12"/>
+      <rect x="266" y="0" width="12" height="12"/>
+      <rect x="196" y="14" width="12" height="12"/>
+      <rect x="210" y="14" width="12" height="12"/>
+      <rect x="224" y="14" width="12" height="12"/>
+      <rect x="266" y="14" width="12" height="12"/>
+      <rect x="210" y="28" width="12" height="12"/>
+      <rect x="224" y="28" width="12" height="12"/>
+      <rect x="238" y="28" width="12" height="12"/>
+      <rect x="224" y="42" width="12" height="12"/>
+      <rect x="238" y="42" width="12" height="12"/>
+      <rect x="252" y="42" width="12" height="12"/>
+      <rect x="196" y="56" width="12" height="12"/>
+      <rect x="238" y="56" width="12" height="12"/>
+      <rect x="252" y="56" width="12" height="12"/>
+      <rect x="266" y="56" width="12" height="12"/>
+      <rect x="196" y="70" width="12" height="12"/>
+      <rect x="210" y="70" width="12" height="12"/>
+      <rect x="224" y="70" width="12" height="12"/>
+      <rect x="238" y="70" width="12" height="12"/>
+      <rect x="252" y="70" width="12" height="12"/>
+      <rect x="266" y="70" width="12" height="12"/>
+    </g>
+
+    <!-- Letter B (Columns 21..26, Row 0..5) -->
+    <g id="letter-B">
+      <rect x="294" y="0" width="12" height="12"/>
+      <rect x="308" y="0" width="12" height="12"/>
+      <rect x="322" y="0" width="12" height="12"/>
+      <rect x="336" y="0" width="12" height="12"/>
+      <rect x="350" y="0" width="12" height="12"/>
+      <rect x="294" y="14" width="12" height="12"/>
+      <rect x="308" y="14" width="12" height="12"/>
+      <rect x="364" y="14" width="12" height="12"/>
+      <rect x="294" y="28" width="12" height="12"/>
+      <rect x="308" y="28" width="12" height="12"/>
+      <rect x="322" y="28" width="12" height="12"/>
+      <rect x="336" y="28" width="12" height="12"/>
+      <rect x="350" y="28" width="12" height="12"/>
+      <rect x="294" y="42" width="12" height="12"/>
+      <rect x="308" y="42" width="12" height="12"/>
+      <rect x="364" y="42" width="12" height="12"/>
+      <rect x="294" y="56" width="12" height="12"/>
+      <rect x="308" y="56" width="12" height="12"/>
+      <rect x="364" y="56" width="12" height="12"/>
+      <rect x="294" y="70" width="12" height="12"/>
+      <rect x="308" y="70" width="12" height="12"/>
+      <rect x="322" y="70" width="12" height="12"/>
+      <rect x="336" y="70" width="12" height="12"/>
+      <rect x="350" y="70" width="12" height="12"/>
+    </g>
+
+    <!-- Letter O (Columns 28..33, Row 0..5) -->
+    <g id="letter-O">
+      <rect x="406" y="0" width="12" height="12"/>
+      <rect x="420" y="0" width="12" height="12"/>
+      <rect x="434" y="0" width="12" height="12"/>
+      <rect x="448" y="0" width="12" height="12"/>
+      <rect x="392" y="14" width="12" height="12"/>
+      <rect x="406" y="14" width="12" height="12"/>
+      <rect x="448" y="14" width="12" height="12"/>
+      <rect x="462" y="14" width="12" height="12"/>
+      <rect x="392" y="28" width="12" height="12"/>
+      <rect x="406" y="28" width="12" height="12"/>
+      <rect x="448" y="28" width="12" height="12"/>
+      <rect x="462" y="28" width="12" height="12"/>
+      <rect x="392" y="42" width="12" height="12"/>
+      <rect x="406" y="42" width="12" height="12"/>
+      <rect x="448" y="42" width="12" height="12"/>
+      <rect x="462" y="42" width="12" height="12"/>
+      <rect x="392" y="56" width="12" height="12"/>
+      <rect x="406" y="56" width="12" height="12"/>
+      <rect x="448" y="56" width="12" height="12"/>
+      <rect x="462" y="56" width="12" height="12"/>
+      <rect x="406" y="70" width="12" height="12"/>
+      <rect x="420" y="70" width="12" height="12"/>
+      <rect x="434" y="70" width="12" height="12"/>
+      <rect x="448" y="70" width="12" height="12"/>
+    </g>
+
+    <!-- Letter C (Columns 35..40, Row 0..5) -->
+    <g id="letter-C">
+      <rect x="504" y="0" width="12" height="12"/>
+      <rect x="518" y="0" width="12" height="12"/>
+      <rect x="532" y="0" width="12" height="12"/>
+      <rect x="546" y="0" width="12" height="12"/>
+      <rect x="560" y="0" width="12" height="12"/>
+      <rect x="490" y="14" width="12" height="12"/>
+      <rect x="504" y="14" width="12" height="12"/>
+      <rect x="546" y="14" width="12" height="12"/>
+      <rect x="560" y="14" width="12" height="12"/>
+      <rect x="490" y="28" width="12" height="12"/>
+      <rect x="504" y="28" width="12" height="12"/>
+      <rect x="490" y="42" width="12" height="12"/>
+      <rect x="504" y="42" width="12" height="12"/>
+      <rect x="490" y="56" width="12" height="12"/>
+      <rect x="504" y="56" width="12" height="12"/>
+      <rect x="546" y="56" width="12" height="12"/>
+      <rect x="560" y="56" width="12" height="12"/>
+      <rect x="504" y="70" width="12" height="12"/>
+      <rect x="518" y="70" width="12" height="12"/>
+      <rect x="532" y="70" width="12" height="12"/>
+      <rect x="546" y="70" width="12" height="12"/>
+      <rect x="560" y="70" width="12" height="12"/>
+    </g>
+
+    <!-- Letter F (Columns 42..47, Row 0..5) -->
+    <g id="letter-F">
+      <rect x="588" y="0" width="12" height="12"/>
+      <rect x="602" y="0" width="12" height="12"/>
+      <rect x="616" y="0" width="12" height="12"/>
+      <rect x="630" y="0" width="12" height="12"/>
+      <rect x="644" y="0" width="12" height="12"/>
+      <rect x="658" y="0" width="12" height="12"/>
+      <rect x="588" y="14" width="12" height="12"/>
+      <rect x="602" y="14" width="12" height="12"/>
+      <rect x="588" y="28" width="12" height="12"/>
+      <rect x="602" y="28" width="12" height="12"/>
+      <rect x="616" y="28" width="12" height="12"/>
+      <rect x="630" y="28" width="12" height="12"/>
+      <rect x="644" y="28" width="12" height="12"/>
+      <rect x="588" y="42" width="12" height="12"/>
+      <rect x="602" y="42" width="12" height="12"/>
+      <rect x="588" y="56" width="12" height="12"/>
+      <rect x="602" y="56" width="12" height="12"/>
+      <rect x="588" y="70" width="12" height="12"/>
+      <rect x="602" y="70" width="12" height="12"/>
+    </g>
+
+    <!-- Letter D (Columns 49..54, Row 0..5) -->
+    <g id="letter-D">
+      <rect x="686" y="0" width="12" height="12"/>
+      <rect x="700" y="0" width="12" height="12"/>
+      <rect x="714" y="0" width="12" height="12"/>
+      <rect x="728" y="0" width="12" height="12"/>
+      <rect x="742" y="0" width="12" height="12"/>
+      <rect x="686" y="14" width="12" height="12"/>
+      <rect x="700" y="14" width="12" height="12"/>
+      <rect x="742" y="14" width="12" height="12"/>
+      <rect x="756" y="14" width="12" height="12"/>
+      <rect x="686" y="28" width="12" height="12"/>
+      <rect x="700" y="28" width="12" height="12"/>
+      <rect x="742" y="28" width="12" height="12"/>
+      <rect x="756" y="28" width="12" height="12"/>
+      <rect x="686" y="42" width="12" height="12"/>
+      <rect x="700" y="42" width="12" height="12"/>
+      <rect x="742" y="42" width="12" height="12"/>
+      <rect x="756" y="42" width="12" height="12"/>
+      <rect x="686" y="56" width="12" height="12"/>
+      <rect x="700" y="56" width="12" height="12"/>
+      <rect x="742" y="56" width="12" height="12"/>
+      <rect x="756" y="56" width="12" height="12"/>
+      <rect x="686" y="70" width="12" height="12"/>
+      <rect x="700" y="70" width="12" height="12"/>
+      <rect x="714" y="70" width="12" height="12"/>
+      <rect x="728" y="70" width="12" height="12"/>
+      <rect x="742" y="70" width="12" height="12"/>
+    </g>
+  </g>
+</svg>

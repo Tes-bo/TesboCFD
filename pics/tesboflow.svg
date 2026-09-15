@@ -1,0 +1,425 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="100%" viewBox="0 0 868 774">
+  <!--
+    TesboFlow Logo: Purple pixel grid pattern
+    Tesbo, 17/Feb/2026
+
+    GRID SYSTEM
+    ===========
+    Small block: 78 x 78
+    Large block: 156 x 156 (= 2 * small, no internal gap)
+    Gap: 39
+    Small pitch: 78 + 39 = 117
+    Large pitch: 156 + 39 = 195
+
+    Column left edges (small cell grid, c0..c7):
+      c0 = 117
+      c1 = 117 + 117 = 234
+      c2 = 117 + 2*117 = 351
+      c3 = 117 + 3*117 = 468
+      c4 = 117 + 4*117 = 585
+      c5 = 117 + 5*117 = 702
+
+    Row top edges (small cell grid, r0..r7):
+      r0 = 85
+      r1 = 85 + 117 = 202
+      r2 = 85 + 2*117 = 319
+      r3 = 85 + 3*117 = 436
+      r4 = 85 + 4*117 = 553
+      r5 = 85 + 5*117 = 670
+
+    Large block positions (each spans 2 small cells = 156px):
+      LargeCol 0 = c0 = 117, width 156 (covers c0..c0+156, ends at 273)
+      LargeCol 1 = c0 + 195 = 312, width 156 (covers 312..468)
+      LargeCol 2 = c0 + 2*195 = 507, width 156 (covers 507..663)
+
+      LargeRow 0 = r0 = 85, height 156 (covers 85..241)
+                   but original data shows large blocks start at y=165
+                   Let me align to the original path data positions.
+
+    ALIGNMENT TO ORIGINAL PATH DATA:
+    The original paths show these approximate positions:
+      Large blocks at ~(117, 165), (315, 165), (117, 358), (315, 358), etc.
+      Small blocks at ~(436, 85), (553, 85), (671, 85), etc.
+
+    Using origin: x0=117, y0=85 for top-left of grid
+    Small cell pitch = 117 (78 block + 39 gap)
+
+    Small cell columns:
+      sc0 = 117   sc1 = 234   sc2 = 351   sc3 = 468   sc4 = 585   sc5 = 702
+
+    Small cell rows:
+      sr0 = 85    sr1 = 202   sr2 = 319   sr3 = 436   sr4 = 553   sr5 = 670
+
+    Large block = 2 small cells wide/tall = 78+39+78 = 195? No, large = 156.
+    So large block at sc0 = x:117, width:156, right edge = 273.
+    Next large block starts at 273 + 39 = 312.
+
+    Recalculating with large block pitch = 156 + 39 = 195:
+      Large col 0: x = 117
+      Large col 1: x = 117 + 195 = 312
+      Large col 2: x = 117 + 2*195 = 507
+
+    For small blocks in the right area, they start after large col 1:
+      After large col 1 right edge: 312 + 156 = 468
+      Small col A: 468 + 39 = 507... but that overlaps large col 2.
+
+    Hmm, the grid needs to be consistent. Let me look at original data:
+      Large blocks: x=117 (w~157), x=315 (w~79 or ~158)
+      Small blocks: x=436, x=553, x=671
+
+    Gaps between original positions:
+      117 to 315: gap = 315 - (117+157) = 315 - 274 = 41
+      315 to 436: gap = 436 - (315+79) = 436 - 394 = 42
+      436 to 553: gap = 553 - (436+79) = 553 - 515 = 38
+      553 to 671: gap = 671 - (553+79) = 671 - 632 = 39
+
+    So original gaps are ~39. Let me use a clean grid:
+
+    x0 = 117, y0 = 85
+    Large block columns (156 wide, 39 gap):
+      LC0: x=117   (117+156=273)
+      LC1: x=312   (312+156=468)
+      LC2: x=507   (507+156=663)
+
+    Small block columns (78 wide, 39 gap) starting from where?
+    In the original, small blocks appear at x=436, 553, 671.
+    With our grid: LC1 right edge = 468.
+    If small blocks start at the midpoint of LC1:
+      LC1 left half: 312..390 (78 wide)
+      gap: 390..429 (39)
+      LC1 right half: 429..507 (78 wide)
+
+    Actually, let me think of it differently.
+    The small block grid and large block grid share the same spacing.
+    Small cell pitch = 78 + 39 = 117.
+
+    Small cell x positions: 117, 234, 351, 468, 585, 702
+    Large block at (sc0, sc1) = x:117, w:78+39+78=195? No, large=156.
+
+    OK I think the issue is: large block 156 != 78+39+78 = 195.
+    Large block 156 = 2*78 = two small blocks WITHOUT the gap between them.
+
+    So the large block sits at sc0 and covers 156px, ending at 117+156=273.
+    The next column starts at 273+39=312.
+
+    Small blocks within a "large block column" would be:
+      Left small: x=117, w=78 (ends at 195)
+      Right small: x=117+78=195, w=78 (ends at 273) NO GAP between them.
+
+    But that means small blocks within a large block area have no gap.
+    The 39px gap only appears BETWEEN large block columns.
+
+    Let me just define the positions directly:
+
+    COLUMN POSITIONS (left edge):
+      C0 = 117    (large col 0 left half, or small block)
+      C1 = 195    (large col 0 right half) [117+78, no gap within large block]
+      C2 = 312    (large col 1 left half)  [273+39]
+      C3 = 390    (large col 1 right half) [312+78]
+      C4 = 507    (large col 2 left half)  [468+39]
+      C5 = 585    (large col 2 right half) [507+78]
+      C6 = 702    (extra small col)        [663+39]
+
+    ROW POSITIONS (top edge):
+      R0 = 85     (top row)
+      R1 = 163    (R0+78, within large row 0) [85+78]
+      R2 = 280    (large row 1 top)  [241+39]
+      R3 = 358    (large row 1 bottom half) [280+78]
+      R4 = 475    (large row 2 top)  [436+39]
+      R5 = 553    (large row 2 bottom half) [475+78]
+      R6 = 670    (bottom row top)   [631+39]
+
+    Hmm this is getting complicated. Let me just use the original
+    approximate positions but with exact 78/156/39 sizes.
+
+    From original path data, the grid origin and spacing:
+      x positions: 117, 315, 436, 553, 671
+      y positions: 85, 165, 202, 319, 358, 437, 516, 552
+
+    Let me just pick clean positions that match the pattern
+    and use exact 78, 156, 39 values.
+
+    FINAL GRID (matching original layout shape):
+
+    x: 117, 312, 507, 585, 663, 741
+    y: 85, 202, 319, 358, 436, 553, 631
+
+    Wait, let me just be practical and compute from a base.
+
+    Base x = 117, Base y = 85
+    Large pitch = 195 (156+39)
+    Small pitch = 117 (78+39)
+
+    Large block x positions: 117, 312, 507
+    Large block y positions: need to figure out from layout
+
+    The layout has:
+    Row A (top, small blocks only): y = 85, height 78
+    Row B (large blocks + small): y = 85 + 78 + 39 = 202, height 156
+                                   large block y = 202, but original shows 165...
+
+    Original large blocks start at y=165, not 202.
+    That means the top small row and the large block row OVERLAP in the
+    vertical grid. The large block starts one small cell ABOVE the
+    small blocks in row 1.
+
+    Let me look at it as: large blocks span from R0+78+39-78 = ...
+    Actually: original y for large = 165, original y for top small = 85.
+    165 - 85 = 80 ~ 78+2. So large row starts about 78 below top small row.
+    But 85 + 78 + 39 = 202, not 165.
+
+    The gap between top small (85+78=163) and large block (165) is only 2px
+    in the original. That means in the original, the top small blocks and
+    the large blocks are on DIFFERENT vertical grids.
+
+    Looking more carefully at the original layout:
+    Top small blocks: y=85..163 (78px)
+    Row 1 large blocks: y=165..321 (156px)
+    Row 1 small blocks: y=202..280 (78px) INSIDE the large block row
+    Row 2 small blocks: y=319..397 (78px)
+    Row 2 large blocks: y=358..516 (158px)
+    Row 2 wide block: y=437..516 (79px)
+    Bottom large blocks: y=552..710 (158px)
+
+    The small blocks at y=202 are at the SAME y as the second half
+    of the large block row. And small blocks at y=319 are between
+    the two large block rows.
+
+    So the vertical grid for small blocks is:
+    sr0=85, sr1=202, sr2=319, sr3=436, sr4=553, sr5=670
+    pitch = 117 (78+39)
+
+    And large blocks span 2 small rows but are only 156px tall
+    (not 195 = 78+39+78). They start at sr0+78+2 = 165 in original.
+
+    With exact 78+39 = 117 pitch:
+    sr0 = 85
+    sr1 = 85 + 117 = 202
+    sr2 = 202 + 117 = 319
+    sr3 = 319 + 117 = 436
+    sr4 = 436 + 117 = 553
+    sr5 = 553 + 117 = 670
+
+    Large blocks should start at sr0 + 78 + 39 = 202? No, that's sr1.
+    But original large blocks start at 165, between sr0 end (163) and sr1 (202).
+
+    I think the large blocks are on their OWN grid:
+    Large row 0: y = 163 + 39 = 202? No, 165 in original.
+    Actually 85 + 78 + 2 = 165. The "2" is just rounding in original.
+
+    Let me use: large blocks start at sr0 + 78 + 39 = 202 - 39 + 2...
+
+    OK I'm overcomplicating this. Let me just define positions that
+    produce a clean result with exact 78/156/39 dimensions.
+
+    PRACTICAL APPROACH: Two grids sharing the same gap size.
+
+    Small block grid (for the small blocks on the right side):
+      Columns: 468, 585, 702  (pitch 117)
+      Rows: 85, 202, 319      (pitch 117)
+
+    Large block grid (for the large blocks on the left/bottom):
+      Columns: 117, 312, 507  (pitch 195)
+      Rows: 202, 436, 670     (pitch 234 = 156+78? no...)
+
+    Hmm, large row pitch should be 195 too (156+39).
+    Large rows: 202, 397, 592? But bottom blocks are at y~552.
+
+    Let me try: the large blocks vertically align with pairs of
+    small block rows.
+
+    Small rows: 85, 202, 319, 436, 553, 670
+    Large block row 0 spans sr0+sr1: y=85, h=156, bottom=241
+    But then gap to next: 241+39=280, not 319.
+
+    156 != 78+39+78. So large blocks CANNOT span exactly 2 small rows
+    with the gap. This is by design: large=156, not 195.
+
+    So the two grids are independent:
+    Large grid pitch = 195 (156+39)
+    Small grid pitch = 117 (78+39)
+
+    Let me define everything from scratch with clean numbers:
+
+    LARGE BLOCK GRID:
+      x: L0=117, L1=312, L2=507
+      y: LR0=163, LR1=358, LR2=553
+      (pitch 195 in both x and y)
+
+    SMALL BLOCK GRID (offset to sit in the "gap" area of large blocks):
+      x: S0=468, S1=585, S2=702
+      (S0 = L1 + 156 = 468, pitch 117)
+      y: SR0=85, SR1=202, SR2=319
+      (need to figure out y offset)
+
+    Check: SR0=85, SR1=85+117=202, SR2=202+117=319
+    Large LR0=163. Gap between SR0 bottom (85+78=163) and LR0 (163) = 0.
+    That works! Top small row ends exactly where large row 0 starts.
+
+    And SR1=202 is inside LR0 (163..319). 202 = 163+39. So the second
+    small row starts 39px into the large block, which is the gap.
+    Actually 163+39=202, and the large block is 156px, so LR0 ends at
+    163+156=319. SR2=319, so the third small row starts exactly where
+    large row 0 ends. Then LR1=319+39=358. 
+
+    FINAL CLEAN GRID:
+    Small columns: S0=468, S1=585, S2=702 (pitch 117)
+    Small rows: SR0=85, SR1=202, SR2=319 (pitch 117)
+    Large columns: L0=117, L1=312, L2=507 (pitch 195)
+    Large rows: LR0=163, LR1=358, LR2=553 (pitch 195)
+
+    Half-large (78px) positions within large blocks:
+      L1 left half: x=312, w=78 (312..390)
+      L1 right half: x=390, w=78 (390..468)
+      LR0 top half: y=163, h=78 (163..241)
+      LR0 bottom half: y=241, h=78 (241..319)
+
+    BLOCK LAYOUT:
+    ============
+
+    Top row (SR0=85): 3 small blocks
+      (S0, SR0) = (468, 85, 78, 78)
+      (S1, SR0) = (585, 85, 78, 78)
+      (S2, SR0) = (702, 85, 78, 78)
+
+    Large row 0 (LR0=163):
+      Full large at (L0, LR0) = (117, 163, 156, 156)
+      Left half at (L1, LR0) = (312, 163, 78, 156)  [first row, second col, left half only]
+
+    Small row 1 (SR1=202): 3 small blocks (right side only)
+      (S0, SR1) = (468, 202, 78, 78)  [was removed for void? NO]
+
+    Wait, from the original layout analysis:
+    The 3x3 VOID occupies cells at approximately:
+      (c3,r1), (c4,r1), (c5,r1) = around x=390..670, y=163..241
+    But in our new grid, the small blocks at SR1 are at y=202,
+    and the void should be at the intersection area.
+
+    Let me re examine the original layout:
+    Row 1 right side had small blocks at: (436,202), (553,202), (671,202)
+    Row 2 right side had small blocks at: (436,319), (553,319), (671,319)
+
+    In the corrected version (with void):
+    Row 1 right: only (671,202) and one more = (c6,r1) and (c7,r1)
+    Actually from the path data, row 1 right has blocks at:
+      (436,202), (553,202), (671,202) = 3 small blocks
+
+    And row 2 right has:
+      (436,319), (553,319), (671,319) = 3 small blocks
+
+    So there are 6 small blocks in the middle area, NOT a void.
+    The void is formed by the L-shaped 3/4 block and the half blocks.
+
+    Let me just map each original path to the new grid:
+
+    1. Large (117,165,157,157) -> (L0, LR0) = (117, 163, 156, 156)
+    2. Tall half (315,165,79,157) -> (L1, LR0) left half = (312, 163, 78, 156)
+    3. Small (436,202,79,79) -> (S0, SR1) = (468, 202, 78, 78)
+    4. Small (553,202,79,79) -> (S1, SR1) = (585, 202, 78, 78)
+    5. Small (671,202,78,81) -> (S2, SR1) = (702, 202, 78, 78)
+    6. Small (436,319,79,79) -> (S0, SR2) = (468, 319, 78, 78)
+    7. Small (553,319,79,79) -> (S1, SR2) = (585, 319, 78, 78)
+    8. Small (671,319,78,79) -> (S2, SR2) = (702, 319, 78, 78)
+    9. Large (117,358,157,158) -> (L0, LR1) = (117, 358, 156, 156)
+    10. 3/4 L-shape at (315,358) -> L1,LR1 minus top-right quarter
+        Left col: (312, 358, 78, 156)
+        Bottom right: (390, 358+78, 78, 78) = (390, 436, 78, 78)
+    11. Wide bottom-half (514,437,158,79) -> (L2, LR1) bottom half
+        = (507, 436, 156, 78)
+        But original includes extra width to 671. Check: 514+158=672.
+        In new grid: L2=507, w=156, right=663. Plus gap. S2=702.
+        Original wide block was 514..672, which is ~158px.
+        New: 507..663 = 156px. Close enough, or should include S2 col?
+        Original path for wide block goes to x=671.689, so width ~158.
+        With new grid: (507, 436, 156+39+78, 78) = (507, 436, 273, 78)?
+        No, looking at original more carefully:
+        The wide block path goes from x=514 to x=671, that's 157px.
+        And it's labeled as (c4+c5, r4). In new grid that's L2 = 507, w=156.
+        But there's also a separate block at (671, 437) in the original
+        white background path. Let me check the purple paths...
+        The purple "wide block" path goes from 514 to 671.689 = ~158px wide.
+        So it covers L2 width. In new grid: (507, 436, 156, 78). Good.
+
+        But wait, the original also has the wide block at (c6+c7, r3)
+        which was (755, 385, 200, 90) in my earlier rect version.
+        Looking at the purple paths, there's no such block!
+        The only wide-ish block in row 2 right is the one from 514..671.
+
+        Actually, re-examining: the wide block purple path goes to x=671.69.
+        In the new grid, L2 right edge = 507+156 = 663.
+        671 > 663, so it extends into the gap area.
+        Hmm, let me just use (507, 436, 156, 78) and see.
+
+    12. Large (117,552,157,158) -> (L0, LR2) = (117, 553, 156, 156)
+    13. Large (315,552,158,158) -> (L1, LR2) = (312, 553, 156, 156)
+    14. Large (514,552,158,158) -> (L2, LR2) = (507, 553, 156, 156)
+
+    Hmm wait, I also need to check: does the wide block in row 2
+    extend to include a small block at S2? Looking at original purple
+    path for "Wide block, bottom half": it goes from x=514 to x=671.
+    671 - 514 = 157. In new grid terms, that's from L2(507) to
+    507+156=663, or maybe 507+156+39+78 = 780? No, 157 ~ 156.
+
+    So the wide block is just L2 width = 156. Good.
+
+    But the original also has the wide block going to 671, and there
+    are small blocks at x=671 in rows 1 and 2. Is there a block at
+    (671, 437)? Looking at the original white background compound path,
+    there's no separate sub-path for that position. And in the purple
+    paths, the wide block ends at 671.689 which is the START of the
+    S2 column (702 in new grid). So no block at S2 in row 3.
+
+    FINAL BLOCK LIST:
+    =================
+    Using positions from the clean grid above.
+  -->
+
+  <g fill="#D648FF">
+    <!-- Top row (y=85): 3 small blocks -->
+    <!-- Small block (S0, SR0) -->
+    <rect x="429" y="85" width="78" height="78"/>
+    <!-- Small block (S1, SR0) -->
+    <rect x="546" y="85" width="78" height="78"/>
+    <!-- Small block (S2, SR0) -->
+    <rect x="663" y="85" width="78" height="78"/>
+
+    <!-- Large row 0 (y=163): 1 full large + 1 left half -->
+    <!-- Large block (L0, LR0): full 156x156 -->
+    <rect x="117" y="163" width="156" height="156"/>
+    <!-- Tall block (L1, LR0): left half only, 78x156 -->
+    <rect x="312" y="163" width="78" height="156"/>
+
+    <!-- Small row 1 (y=202): 3 small blocks -->
+    <!-- Small block (S0, SR1) -->
+    <rect x="429" y="202" width="78" height="78"/>
+    <!-- Small block (S1, SR1) -->
+    <rect x="546" y="202" width="78" height="78"/>
+    <!-- Small block (S2, SR1) -->
+    <rect x="663" y="202" width="78" height="78"/>
+
+    <!-- Small row 2 (y=319): 3 small blocks -->
+    <!-- Small block (S0, SR2) -->
+    <rect x="429" y="319" width="78" height="78"/>
+    <!-- Small block (S1, SR2) -->
+    <rect x="546" y="319" width="78" height="78"/>
+    <!-- Small block (S2, SR2) -->
+    <rect x="663" y="319" width="78" height="78"/>
+
+    <!-- Large row 1 (y=358): 1 full large + 3/4 L-shape + bottom half -->
+    <!-- Large block (L0, LR1): full 156x156 -->
+    <rect x="117" y="358" width="156" height="156"/>
+    <!-- 3/4 block (L1, LR1): L-shape path, missing top-right quarter -->
+    <path d="M312,358 h78 v78 h78 v78 h-156 v-156 z"/>
+    <!-- Wide block (L2, LR1): bottom half only, 156x78 -->
+    <rect x="507" y="436" width="156" height="78"/>
+
+    <!-- Large row 2 (y=553): 3 full large blocks -->
+    <!-- Large block (L0, LR2) -->
+    <rect x="117" y="553" width="156" height="156"/>
+    <!-- Large block (L1, LR2) -->
+    <rect x="312" y="553" width="156" height="156"/>
+    <!-- Large block (L2, LR2) -->
+    <rect x="507" y="553" width="156" height="156"/>
+  </g>
+</svg>
