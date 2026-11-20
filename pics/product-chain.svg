@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 656" width="1280" height="656" role="img" aria-labelledby="t d" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <title id="t">The TesboCFD product chain</title>
+  <desc id="d">TesboMesh hands a mesh to TesboFlow, TesboFlow fields train the models in TesboAI, and the answer goes into the next design. TesboLBM runs casting as its own chain. Adjoint shape optimisation, TesboStruct and fluid-structure coupling are in development.</desc>
+
+  <rect x="0.5" y="0.5" width="1279" height="655" rx="18" fill="#0A0E17" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <!-- the chain: three nodes on a line, the hand-off written on the line -->
+  <g fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M90 70H438M431 63l7 7-7 7"/>
+    <path d="M498 70H846M839 63l7 7-7 7"/>
+    <path d="M906 70H1196"/>
+    <path d="M1228 70a10 10 0 1 1-4-8M1225 55v8h-8" stroke-opacity="0.5"/>
+  </g>
+  <g font-size="14" fill="#9EA0AA" text-anchor="middle">
+    <text x="264" y="56">Mesh reads straight in</text>
+    <text x="672" y="56">Fields train the models</text>
+    <text x="1051" y="56">The answer goes into the next design</text>
+  </g>
+  <g font-size="13" font-weight="700" text-anchor="middle">
+    <circle cx="60" cy="70" r="20" fill="#F4C2C2" fill-opacity="0.08" stroke="#F4C2C2" stroke-opacity="0.45"/>
+    <text x="60" y="74.5" fill="#F4C2C2">01</text>
+    <circle cx="468" cy="70" r="20" fill="#D946EF" fill-opacity="0.08" stroke="#D946EF" stroke-opacity="0.45"/>
+    <text x="468" y="74.5" fill="#D946EF">02</text>
+    <circle cx="876" cy="70" r="20" fill="#FDBF8E" fill-opacity="0.08" stroke="#FDBF8E" stroke-opacity="0.45"/>
+    <text x="876" y="74.5" fill="#FDBF8E">03</text>
+  </g>
+
+  <!-- the three products on the chain -->
+  <g fill="#FFFFFF" fill-opacity="0.025" stroke="#FFFFFF" stroke-opacity="0.12">
+    <rect x="40" y="106" width="384" height="150" rx="14"/>
+    <rect x="448" y="106" width="384" height="150" rx="14"/>
+    <rect x="856" y="106" width="384" height="150" rx="14"/>
+  </g>
+  <g font-size="12.5" letter-spacing="1.4" fill="#808795">
+    <text x="64" y="141">MESH</text>
+    <text x="472" y="141">SOLVE</text>
+    <text x="880" y="141">AI</text>
+  </g>
+  <g font-size="26" font-weight="700" fill="#F6F4F0">
+    <text x="64" y="184">TesboMesh</text>
+    <text x="472" y="184">TesboFlow</text>
+    <text x="880" y="184">TesboAI</text>
+  </g>
+  <g font-size="15" fill="#9EA0AA">
+    <text x="64" y="213">Dirty STL or CAD in.</text>
+    <text x="64" y="235">A solver-ready mesh out.</text>
+    <text x="472" y="213">GPU-native finite-volume solver for flow,</text>
+    <text x="472" y="235">heat transfer and moving meshes.</text>
+    <text x="880" y="213">Describe a case in plain words.</text>
+    <text x="880" y="235">Get a checked answer.</text>
+  </g>
+
+  <!-- status, as tesbocfd.com states it -->
+  <g fill="none" stroke="#FFFFFF" stroke-opacity="0.14">
+    <rect x="276" y="124" width="128" height="24" rx="12"/>
+    <rect x="708" y="124" width="104" height="24" rx="12"/>
+    <rect x="1048" y="124" width="172" height="24" rx="12"/>
+    <rect x="284" y="554" width="104" height="24" rx="12"/>
+  </g>
+  <circle cx="290" cy="136" r="3.5" fill="#FDBF8E"/>
+  <circle cx="722" cy="136" r="3.5" fill="#34D399"/>
+  <circle cx="1062" cy="136" r="3.5" fill="#FDBF8E"/>
+  <circle cx="298" cy="566" r="3.5" fill="#34D399"/>
+  <g font-size="13" fill="#9EA0AA">
+    <text x="301" y="140.5">Experimental</text>
+    <text x="733" y="140.5">Available</text>
+    <text x="1073" y="140.5">Working prototype</text>
+    <text x="309" y="570.5">Available</text>
+  </g>
+
+  <!-- in development: dashed -->
+  <g fill="none" stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="1.5" stroke-dasharray="5 6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="40" y="334" width="384" height="120" rx="14"/>
+    <rect x="448" y="334" width="384" height="120" rx="14"/>
+    <path d="M500 256V282H340V326"/>
+    <path d="M380 334V306H540V264"/>
+    <path d="M640 264V326"/>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M334 321l6 6 6-6"/>
+    <path d="M534 269l6-6 6 6"/>
+    <path d="M634 269l6-6 6 6M634 321l6 6 6-6"/>
+  </g>
+  <g font-size="14" fill="#9EA0AA">
+    <text x="420" y="274" text-anchor="middle">Sensitivities</text>
+    <text x="460" y="324" text-anchor="middle">A better shape</text>
+    <text x="658" y="300">Fluid–structure coupling</text>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-opacity="0.14">
+    <rect x="258" y="352" width="146" height="24" rx="12"/>
+    <rect x="666" y="352" width="146" height="24" rx="12"/>
+  </g>
+  <g fill="none" stroke="#9EA0AA" stroke-width="1.2">
+    <circle cx="272" cy="364" r="3.2"/>
+    <circle cx="680" cy="364" r="3.2"/>
+  </g>
+  <g font-size="13" fill="#9EA0AA">
+    <text x="283" y="368.5">In development</text>
+    <text x="691" y="368.5">In development</text>
+  </g>
+  <g font-size="12.5" letter-spacing="1.4" fill="#808795">
+    <text x="64" y="369">IN TESBOFLOW</text>
+    <text x="472" y="369">STRUCTURES AND HEAT</text>
+    <text x="880" y="369">IN DEVELOPMENT</text>
+  </g>
+  <g font-size="21" font-weight="700" fill="#F6F4F0">
+    <text x="64" y="407">Adjoint shape optimisation</text>
+    <text x="472" y="407">TesboStruct</text>
+  </g>
+  <g font-size="15" fill="#9EA0AA">
+    <text x="64" y="434">Shows where the shape should move.</text>
+    <text x="472" y="434">GPU-native finite elements.</text>
+    <text x="880" y="401">Dashed boxes are not released.</text>
+    <text x="880" y="423">No dates, and no numbers until</text>
+    <text x="880" y="445">they are measured.</text>
+  </g>
+
+  <!-- casting: its own chain -->
+  <rect x="40" y="494" width="1200" height="122" rx="14" fill="#FFFFFF" fill-opacity="0.025" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="84" cy="555" r="20" fill="#9148FF" fill-opacity="0.10" stroke="#9148FF" stroke-opacity="0.6"/>
+  <circle cx="84" cy="555" r="4.5" fill="#9148FF"/>
+  <text x="124" y="538" font-size="12.5" letter-spacing="1.4" fill="#808795">CASTING, ITS OWN CHAIN</text>
+  <text x="124" y="575" font-size="26" font-weight="700" fill="#F6F4F0">TesboLBM</text>
+  <path d="M470 546H1170" fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5"/>
+  <g fill="#9148FF">
+    <circle cx="470" cy="546" r="4"/>
+    <circle cx="610" cy="546" r="4"/>
+    <circle cx="750" cy="546" r="4"/>
+    <circle cx="890" cy="546" r="4"/>
+    <circle cx="1030" cy="546" r="4"/>
+    <circle cx="1170" cy="546" r="4"/>
+  </g>
+  <g font-size="14" fill="#9EA0AA" text-anchor="middle">
+    <text x="470" y="574">STL / PLY</text>
+    <text x="610" y="574">Built-in meshing</text>
+    <text x="750" y="574">Filling</text>
+    <text x="890" y="574">Heat and</text>
+    <text x="890" y="592">solidification</text>
+    <text x="1030" y="574">Defect criteria</text>
+    <text x="1170" y="574">ParaView</text>
+  </g>
+</svg>
